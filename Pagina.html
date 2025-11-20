@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Joyería - Mi Tienda</title>
+
+<style>
+/*==========================
+      ESTILOS GLOBALES
+===========================*/
+:root{
+  --fondo: #062238;
+  --texto: #ffffff;
+  --card: rgba(255,255,255,0.08);
+  --hover: #1e90ff;
+}
+
+.light-mode{
+  --fondo: #f0f0f0;
+  --texto: #000000;
+  --card: rgba(0,0,0,0.08);
+  --hover: #145a86;
+}
+
+body{
+  margin:0;
+  font-family: Arial;
+  background: var(--fondo);
+  color: var(--texto);
+  background-image: url('FONDO.jpg'); /* ← EDITA ESTE NOMBRE */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  opacity: 0.98;
+}
+
+/* Oscurecer la imagen de fondo */
+body::before{
+  content:"";
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.55);
+  z-index:-1;
+}
+
+/*==========================
+          HEADER
+===========================*/
+header{
+  text-align:center;
+  padding: 20px 0;
+}
+header img{
+  width:180px; /* LOGO */
+}
+
+/*==========================
+            MENÚ
+===========================*/
+nav{
+  text-align:center;
+  margin-bottom:25px;
+}
+nav ul{
+  list-style:none;
+  padding:0;
+}
+nav ul li{
+  display:inline-block;
+  margin: 0 20px;
+}
+nav a{
+  text-decoration:none;
+  color:var(--texto);
+  font-size:20px;
+  padding:6px 12px;
+  transition:0.3s;
+  border-radius:6px;
+}
+nav a:hover{
+  background: var(--hover);
+  color:white;
+}
+
+/*==========================
+      SECCIONES
+===========================*/
+section{
+  display:none;
+  padding:20px;
+  max-width:1100px;
+  margin:auto;
+}
+section.active{
+  display:block;
+}
+
+/*==========================
+     TARJETAS PRODUCTOS
+===========================*/
+.producto{
+  background: var(--card);
+  padding:15px;
+  margin:10px;
+  border-radius:10px;
+  display:inline-block;
+  width:250px;
+  vertical-align:top;
+  text-align:center;
+  backdrop-filter: blur(4px);
+}
+.producto img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:10px;
+}
+.producto p{
+  margin:10px 0;
+  font-size:15px;
+}
+
+/*==========================
+     BOTÓN MODO OSCURO
+===========================*/
+#modoBtn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  padding:10px 20px;
+  background:var(--hover);
+  border:none;
+  color:white;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <!-- FOTO DEL LOGO -->
+  <img src="Logo.png" alt="Logo de la joyería">
+</header>
+
+<button id="modoBtn">Modo Claro/Oscuro</button>
+
+<nav>
+  <ul>
+    <li><a href="#" onclick="mostrar('inicio')">Inicio</a></li>
+    <li><a href="#" onclick="mostrar('aretes')">Aretes</a></li>
+    <li><a href="#" onclick="mostrar('pulseras')">Pulseras</a></li>
+    <li><a href="#" onclick="mostrar('collares')">Collares</a></li>
+  </ul>
+</nav>
+
+<!-- =======================
+        SECCIÓN INICIO
+======================= -->
+<section id="inicio" class="active">
+  <h2>Bienvenido a Joyeria NICE</h2>
+  <p>
+    Aquí encontrarás joyería fina hecha a mano, elaborada con materiales de alta calidad.
+    Nuestro catálogo incluye piezas exclusivas como aretes, pulseras y collares diseñados
+    para resaltar tu elegancia en cada ocasión.
+  <p>
+    La joyeria NICE se elabora de forma artesanal con una base de metales cono el zinc o
+    aleaciones de laton,bronce y estaño, para luego recubrirlas con cuatro capas de oro
+    de 18 quilates, rodio o platino.
+  <p>
+    El proceso implica que artesanos Mexicanos trabajen con metales para darles la forma
+    deseada, seguido de los procesos de baño para dar el acabado final.
+  </p>
+
+  <div style="text-align:center;">
+    <img src="Inicio1.jpg" width="300">
+    <img src="Inicio2.jpg" width="300">
+    <img src="Inicio3.jpg" width="300">
+  </div>
+</section>
+
+<!-- =======================
+        ARETES
+======================= -->
+<section id="aretes">
+  <h2>Aretes</h2>
+  <p>
+    Variedad de aretes
+
+  <!-- 8 ESPACIOS PARA PRODUCTOS -->
+  <div class="producto">
+    <img src="Arete1.JPEG">
+    <p>Arracadas</p>
+    <p><b>$499.00MX</b></p>
+  </div>
+
+  <div class="producto">
+    <img src="Arete2.JPEG">
+    <p>Arracadas</p>
+    <p><b>$389.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Arete3.JPEG">
+    <p>Arracadas</p>
+    <p><b>$299.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Arete4.JPEG">
+    <p>Arracadas</p>
+    <p><b>$319.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Arete5.JPEG">
+    <p>Arracadas</p>
+    <p><b>$319.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Arete6.JPEG">
+    <p>Arracadas</p>
+    <p><b>$319.00MX</b></p>
+  </div>
+
+  <!-- COPIA ESTOS DIV HASTA COMPLETAR 8 -->
+</section>
+
+<!-- =======================
+        PULSERAS
+======================= -->
+<section id="pulseras">
+  <h2>Pulseras</h2>
+  <p> 
+    Variedad de pulseras
+
+  <div class="producto">
+    <img src="Pulsera1.JPEG">
+    <p>Pulsera de corazon</p>
+    <p><b>$349.00MX</b></p>
+  </div>
+
+  <div class="producto">
+    <img src="Pulsera2.JPEG">
+    <p>Pulsera con arete de bolita</p>
+    <p><b>$499.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Pulsera3.JPEG">
+    <p>Pulsera de donas</p>
+    <p><b>$399.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Pulsera4.JPEG">
+    <p>Pulsera de ojos</p>
+    <p><b>$399.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Pulsera5.JPEG">
+    <p>Pulsera de perlas</p>
+    <p><b>$499.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Pulsera6.JPEG">
+    <p>Trio de pulseras</p>
+    <p><b>$599.00MX</b></p>
+  </div>
+
+  <!-- HASTA 8 PRODUCTOS -->
+</section>
+
+<!-- =======================
+        COLLARES
+======================= -->
+<section id="collares">
+  <h2>Collares</h2>
+  <p>
+    Variedad de collares
+  <div class="producto">
+    <img src="Collar1.JPEG">
+    <p>Collar de perlas</p>
+    <p><b>$699.00MX</b></p>
+  </div>
+
+  <div class="producto">
+    <img src="Collar2.JPEG">
+    <p>Collar de San Judas</p>
+    <p><b>$529.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Collar3.JPEG">
+    <p>Collar de San Judas</p>
+    <p><b>$399.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Collar4.JPEG">
+    <p>Collar de moño</p>
+    <p><b>$359.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Collar5.JPEG">
+    <p>Collar de estrella</p>
+    <p><b>$499.00MX</b></p>
+  </div>
+
+<div class="producto">
+    <img src="Collar6.JPEG">
+    <p>Collar de doble estrella</p>
+    <p><b>$469.00MX</b></p>
+  </div>
+
+  <!-- HASTA 8 PRODUCTOS -->
+</section>
+
+<script>
+/* Mostrar una sección y ocultar las demás */
+function mostrar(seccion){
+  document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+  document.getElementById(seccion).classList.add("active");
+}
+
+/* MODO CLARO / OSCURO */
+document.getElementById("modoBtn").onclick = function(){
+  document.body.classList.toggle("light-mode");
+}
+</script>
+
+</body>
+</html>
